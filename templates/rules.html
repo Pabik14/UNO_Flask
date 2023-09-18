@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UNO</title>
+    <link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+<div class="rules">
+            <a class="rule" href="/form" >Wróć do wyboru rozgrywki!</a>
+        </div>
+  <div class="zasady">
+                    <h2>ZASADY GRY</h2>
+
+                        <div><ol class="listazasad">
+                            <li>Każdy z graczy na start otrzymuje 7 kart.</li>
+                            <li>Losowana jest karta, pierwszy gracz musi dobrać kartę odpowiadającą tej wyłożonej kolorem,<br> numerem bądź wykrozystując kartę specjalną.</li>
+                            <li>Pierwszą kartą NIE może być karta specjalna.</li>
+                            <li>Następny gracz robi dokładnie to samo, dostosowując się do karty odłożonej przez poprzeniego gracza.</li>
+                            <li>Jeżeli gracz nie posiada w ręce odpowiedniej karty zobowiązany jest do pociągnięcia z talii karty.</li>
+                            <li>Jeżeli pociągnięta przez gracza karta odpowiada ostatniej rzuconej na stos, gracz może ją dołożyć,<br> jeżeli nie, wyciągnięta karta zostaje w jego rękach.</li>
+                            <li>Nie ma ogarniczenia jak wiele kart gracz może mieć w ręce.</li>
+                            <li>Podczas wyrzucania kart, można wyrzucić dowolną ich ilość kart mających ten sam numer. <br>Jedynym ogarniczeniem jest to by kolor, bądź liczba zgadzały się z ostanią odłożoną na stos kartą.<br> <img style="float:left" src=" {{ url_for('static', filename='777.png') }}" width="15%"><br>Jedynym ogarniczeniem jest to by kolor, bądź liczba zgadzały się z ostanią odłożoną na stos kartą.</li>
+                        </ol>
+
+                    </div>
+                   <h2>KARTY SPECJALNE</h2>
+                      <div><ol>
+                          <li><img style="float: left; margin-right: 10px" src=" {{ url_for('static', filename='blue_plustwo.png') }}" width="50">Karta +2 - gdy karta ta zostanie zagrana, następny gracz zmuszony jest do pobrania dwóch kart, efekt tej kart można zniwelować rzucając kolejną kartę +2, bądź +4. Jeżeli gracz nie posiada w ręce takiej karty, może pociągnąć z talii jedną kartę, jeżeli wylosuje kartę +2, może ją rzucić na stos, a kara przechodzi na następnego gracza, pomniejszona o tę jedną kartę. </li><br>
+                          <li><img style="float: left; margin-right: 10px" src=" {{ url_for('static', filename='blue_reverse.png') }}" width="50">Karta specjalna Reverse - zmiana kolejki, można rzucić kilka na raz, dwie rzucone karty nie zmieniają kolejki, trzy rzucone karty działają jakby rzucona została jedna, w trybie gry dwuosobowej karta nie zmienia kolejki. </li><br>
+                          <li><img style="float: left; margin-right: 10px" src=" {{ url_for('static', filename='blue_skip.png') }}" width="50">Karta specjalna Stop - powoduje, że następny gracz traci kolejkę, nie można jej zniwelować rzucając na nią kolejną kartę stop.</li><br>
+                          <li><img style="float: left; margin-right: 10px" src=" {{ url_for('static', filename='black_plusfour.png') }}" width="50">Karta +4 - można ją położyć na dowolną kartę, osoba rzucająca ustala kolor jaki musi rzucić następny gracz, gdy karta ta zostanie zagrana, następny gracz zmuszony jest do pobrania czterech kart, efekt tej kart można zniwelować rzucając kolejną kartę +2 - w odpowiednim kolrze, który podaje gracz rzucający ją, bądź następne +4.  </li><br>
+                          <li><img style="float: left; margin-right: 10px" src=" {{ url_for('static', filename='black_wildcard.png') }}" width="50">Karta zmiany koloru - można ją położyć na dowolną kartę, ale nie niweluje konsekwencji pozostałych kart specjalnych, osoba rzucająca ustala kolor, jaki będzie musiał wyłożyć gracz po nim.</li><br>
+                      </ol>
+  </div>
+  </div>
+</body>
+</html>

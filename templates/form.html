@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>UNO</title>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/style.css') }}" />
+	</head>
+	<body>
+     <div class="rules">
+            <a class="rule" href="/rules" >Zasady</a>
+        </div>
+		<form action="{{ url_for('reset') }}" method="post">
+            <div class="ins">
+                    <div><h2>INSTRUKCJA</h2></div>
+
+                        <ol>
+                            <li>Zapoznaj się z zasadami.</li>
+                            <li>Wybierz ilość graczy.</li>
+                            <li>Podaj imiona.</li>
+                            <li>Możesz rozpocząć grę!</li>
+                        </ol>
+                    </div>
+			<div>
+
+                <div class="formcentered">
+					<h2>Wybierz liczbę graczy</h2>
+				</div>
+
+				<div class="formcentered">
+					<select name="numPlayers" id="numPlayers">
+						<option value="2" name="player2" id="player2"selected >2</option>
+						<option value="3" name="player3" id="player3" >3</option>
+						<option value="4" name="player4" id="player4" >4</option>
+						<option value="5" name="player5" id="player5" >5</option>
+					</select>
+				</div>
+			</div>
+               <div class="names"> <form action="" method="POST">
+                    <label for="fname">Gracz 1:</label>
+                    <input type="text" id="firstname" name="fname">
+                    <label for="fname">Gracz 2:</label>
+                    <input type="text" id="firstname" name="fname">
+                    <label for="fname">Gracz 3:</label>
+                    <input type="text" id="firstname" name="fname">
+                    <label for="fname">Gracz 4:</label>
+                    <input type="text" id="firstname" name="fname">
+                    <label for="fname">Gracz 5:</label>
+                    <input type="text" id="firstname" name="fname">
+
+                </form>
+
+				<input style="border: none" type="submit" value="Rozpocznij grę" />
+			</div>
+		</form>
+	</body>
+
+</html>

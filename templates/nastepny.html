@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>UNO</title>
+</head>
+<body>
+
+    <div class="row">
+        <div class="column left">
+        <h1>{% if currentPlayer == 0: %}
+                {{playername[0]}} 's Turn
+                {% endif %}
+               {% if currentPlayer == 1: %}
+               {{playername[1]}} 's Turn
+                {% endif %}
+                {% if currentPlayer == 2: %}
+               {{playername[2]}} 's Turn
+                {% endif %}
+               {% if currentPlayer == 3: %}
+                {{playername[3]}} 's Turn
+                {% endif %}
+               {% if currentPlayer == 4: %}
+               {{playername[4]}} 's Turn
+                {% endif %}
+        </h1>
+        {% for player in range(numPlayers|int): %}
+            <h2>
+            <br>
+                <p>{% if player == 0: %}
+                {{playername[0]}}:
+                {% endif %}
+               {% if player == 1: %}
+               {{playername[1]}}:
+                {% endif %}
+               {% if player == 2: %}
+               {{playername[2]}}:
+                {% endif %}
+               {% if player == 3: %}
+                {{playername[3]}}:
+                {% endif %}
+               {% if player == 4: %}
+               {{playername[4]}}:
+                {% endif %}</p>
+
+                <div class="cards">
+                {% for card in players[player] %}
+                    {% if player != currentPlayer: %}
+                        <img class="card" src=" {{ url_for('static', filename='back.png') }}" width="150px">
+                    {% elif card in playable: %}
+
+                            <img class="playablecard" src=" {{ url_for('static', filename='back.png') }}" width="150px">
+                        </a>
+                    {% else: %}
+                        <img class="card" src=" {{ url_for('static',  filename='back.png') }}" width="150px">
+                    {% endif %}
+                {% endfor %}
+                </div>
+
+
+            </h2>
+        {% endfor %}
+        </div>
+        <div class="column right">
+            <h2>Pile:</h2>
+            <p><img src=" {{ url_for('static', filename=discards[0]+'.png') }}" width="150px"></p>
+            <a class="button1" href="/board" >Kolejny gracz</a>
+
+
+        </div>
+    </div>
+</body>
+</html>

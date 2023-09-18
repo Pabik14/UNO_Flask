@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UNO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <h1 class="won">Gracz {% if winner == 0: %}
+                {{playername[0]}}
+                {% endif %}
+               {% if winner == 1: %}
+               {{playername[1]}}
+                {% endif %}
+               {% if winner == 2: %}
+               {{playername[2]}}
+                {% endif %}
+               {% if winner == 3: %}
+                {{playername[3]}}
+                {% endif %}
+               {% if winner == 4: %}
+               {{playername[4]}}
+                {% endif %} wygrał/a!</h1>
+    <div class="formcentered"><a href="{{ url_for('form') }}" class="button1" style="text-align: center">Zagraj ponownie!</a></div>
+</body>
+</html>
